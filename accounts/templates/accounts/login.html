@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'menu.html' %}
+
+<main>
+ 	<div class="register_container">
+	 	<h1 class="create_heading">
+	 		Login to your account
+	 	</h1>
+
+	 	{% if form.errors %}
+		 	<div class="container_errors">
+		 		{% for key, value in form.errors.items %}
+	 				{% for error in value %}
+		 				<p class="error">{{ error }}</p>
+		 			{% endfor %}
+				{% endfor %}
+		 	</div>
+		{% endif %}
+
+		<form action="" method="POST">
+			{% csrf_token %}
+
+			<div class="reg_inp">
+				<!-- <input type="text" required> -->
+				{{ form.username }}
+				<label>Username / E-mail address<span class="req">*</span>:</label>
+			</div>
+
+			<div class="reg_inp">
+				<!-- <input type="password" required> -->
+				{{ form.password }}
+				<label>Password<span class="req">*</span>:</label>
+			</div>
+
+			<div class="container_login">
+				<label class="check login_check">
+					<input type="checkbox">
+					<span class="checkmark"></span>
+					<p>Remember me</p>
+				</label>
+
+				<div class="login_btn">
+					<button type="submit">Login your account</button>
+				</div>
+			</div>
+
+			<div class="forgot_pass">
+				<a href="#">Forgot your password?</a>
+			</div>
+		</form>
+
+		<span class="line"></span>
+
+		<div class="login_link">
+			<h4>I don't have an account</h4>
+			<a href="{% url 'register' %}">Create an account</a>
+		</div>
+	</div>
+</main>
+
+{% include 'footer.html' %}
+
+{% endblock %}

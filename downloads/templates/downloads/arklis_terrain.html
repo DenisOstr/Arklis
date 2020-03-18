@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'menu.html' %}
+
+<main>
+ 	<div class="register_container">
+	 	<h1 class="create_heading">
+	 		Download Arklis Terrain
+	 	</h1>
+
+	 	<div class="features_main" id="features_section">
+			<div class="container">
+				<div class="content">
+					<div class="left">
+						<img src="{% static 'img/ArklisEditorModeler.png' %}" alt="Arklis Editor Modeler">
+					</div>
+					
+					<div class="right">
+						<h3>Terrain Modeling</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat necessitatibus nihil modi doloribus cum laboriosam praesentium alias, unde corporis maxime porro eos dolorem rerum molestias officia deserunt quibusdam ex quidem.</p>
+					</div>
+				</div>
+
+				<div class="content reverse">
+					<div class="left">
+						<img class="img" src="{% static 'img/ArklisEditorGenerator.png' %}" alt="Arklis Editor Generator">
+					</div>
+
+					<div class="right">
+						<h3>Terrain Generator</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam similique ab aliquam. Tempore, earum? Sapiente aperiam deleniti voluptates. Sed repellendus fuga quibusdam reiciendis perferendis dolor, incidunt accusamus ad error tenetur amet rerum impedit dolorem dicta ea porro, architecto iure.</p>
+					</div>
+				</div>
+
+				<div class="content">
+					<div class="left">
+						<img class="img" src="{% static 'img/ArklisEditorModeler.png' %}" alt="Arklis Editor Modeler">
+					</div>
+					
+					<div class="right">
+						<h3>Terrain Texturing</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat necessitatibus nihil modi doloribus cum laboriosam praesentium alias, unde corporis maxime porro eos dolorem rerum molestias officia deserunt quibusdam ex quidem.</p>
+					</div>
+				</div>
+
+				<div class="content reverse">
+					<div class="left">
+						<img class="img" src="{% static 'img/ArklisEditorGenerator.png' %}" alt="Arklis Editor Generator">
+					</div>
+
+					<div class="right">
+						<h3>Python Scripting</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam similique ab aliquam. Tempore, earum? Sapiente aperiam deleniti voluptates. Sed repellendus fuga quibusdam reiciendis perferendis dolor, incidunt accusamus ad error tenetur amet rerum impedit dolorem dicta ea porro, architecto iure.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab_container">
+			<table>
+				<tr>
+					<th>Release version</th>
+					<th>Release date</th>
+					<th>Download</th>
+					<th>Release Notes</th>
+				</tr>
+
+				<tr>
+					<td>Arklis Terrain 1.0206.19</td>
+					<td>June 2, 2019</td>
+					<td><a href="#">download</a></td>
+					<td><a href="#">Release note</a></td>
+				</tr>
+
+				<tr>
+					<td>Arklis Terrain 1.0204.19</td>
+					<td>April 2, 2019</td>
+					<td><a href="#">download</a></td>
+					<td><a href="#">Release note</a></td>
+				</tr>
+
+				<tr>
+					<td>Arklis Terrain 1.2303.19</td>
+					<td>March 23, 2019</td>
+					<td><a href="#">download</a></td>
+					<td><a href="#">Release note</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</main>
+
+{% include 'footer.html' %}
+
+{% endblock %}

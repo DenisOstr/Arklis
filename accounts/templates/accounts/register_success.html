@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'menu.html' %}
+
+<main>
+ 	<div class="register_container">
+	 	<h1 class="success">Your account has been successfully registered</h1>
+
+	 	<p>Now you can login to your account.</p>
+
+	 	<div class="success_to_login">
+			<a href="{% url 'login' %}">Login your account</a>
+		</div>
+	</div>
+</main>
+
+{% include 'footer.html' %}
+
+{% endblock %}

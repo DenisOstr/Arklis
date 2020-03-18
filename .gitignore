@@ -11,7 +11,7 @@ __pycache__/
 build/
 develop-eggs/
 dist/
-downloads/
+# downloads/
 eggs/
 .eggs/
 lib/
@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+secretKey.txt
+
+staticfiles/

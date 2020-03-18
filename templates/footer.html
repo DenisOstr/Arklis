@@ -1,0 +1,27 @@
+{% load static %}
+
+<footer>
+	<div class="footer_container">
+		<div class="footer_menu">
+			<ul>
+				<li><a href="/#features_section">Features</a></li>
+				<li><a href="/#download_section">Download</a></li>
+				<li><a href="#">Learn</a></li>
+				<li><a href="#">Marketplace</a></li>
+				<li><a href="#">Community <i class="fas fa-sort-down"></i></a></li>
+			</ul>
+		</div>
+		
+		<div class="copy_container">
+			<a href="{% url 'index' %}" class="footer_logo"><img src="{% static 'img/ArklisLogoNew.png' %}" alt="Arklis Logo" style="width: 80px; height: 70px;"></a>
+
+			<span class="soc_icons">
+				<a href="#"><img src="{% static 'img/twicon.png' %}" alt="Twitter icon" style="width: 33px;"></a>
+				<a href="#"><img src="{% static 'img/yticon.png' %}" alt="YouTube icon" style="width: 33px;"></a>
+				<a href="#"><img src="{% static 'img/fcicon.png' %}" alt="Facebook icon"></a>
+			</span>
+
+			<span class="copy">&copy; 2019 Arklis Group. All Rights Reserved</span>
+		</div>
+	</div>
+</footer>

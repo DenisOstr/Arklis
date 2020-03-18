@@ -1,0 +1,260 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'menu.html' %}
+
+<main>
+	<div class="header_main">
+		<div class="header_text">
+			<h3 class="name">Arklis</h3>
+
+			<p>Terrain and Nature Modeler/Generator</p>
+			<h4>Your Vision. Your Creativity. Your world.</h4>
+		
+			{% if user.is_authenticated %}
+				<button type="submit" class="get_started"><a href="#download_section">Get Started</a></button>
+			{% else %}
+				<button type="submit" class="get_started"><a href="{% url 'register' %}">Get Started</a></button>
+			{% endif %}
+		</div>
+	</div>
+
+	<div class="features_main" id="features_section">
+		<h2 class="features_header">Features</h2>
+
+		<div class="container">
+			<div class="content">
+				<div class="left">
+					<img src="{% static 'img/ArklisEditorModeler.png' %}" alt="Arklis Editor Modeler">
+				</div>
+				
+				<div class="right">
+					<h3>Terrain Modeling</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat necessitatibus nihil modi doloribus cum laboriosam praesentium alias, unde corporis maxime porro eos dolorem rerum molestias officia deserunt quibusdam ex quidem.</p>
+
+					<button class="btn more_about">More...</button>
+				</div>
+			</div>
+
+			<div class="content reverse">
+				<div class="left">
+					<img class="img" src="{% static 'img/ArklisEditorGenerator.png' %}" alt="Arklis Editor Generator">
+				</div>
+
+				<div class="right">
+					<h3>Terrain Generator</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam similique ab aliquam. Tempore, earum? Sapiente aperiam deleniti voluptates. Sed repellendus fuga quibusdam reiciendis perferendis dolor, incidunt accusamus ad error tenetur amet rerum impedit dolorem dicta ea porro, architecto iure.</p>
+				
+					<button class="btn more_about">More...</button>
+				</div>
+			</div>
+
+			<div class="content">
+				<div class="left">
+					<img class="img" src="{% static 'img/ArklisEditorModeler.png' %}" alt="Arklis Editor Modeler">
+				</div>
+				
+				<div class="right">
+					<h3>Tree And Plants Modeler</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat necessitatibus nihil modi doloribus cum laboriosam praesentium alias, unde corporis maxime porro eos dolorem rerum molestias officia deserunt quibusdam ex quidem.</p>
+
+					<button class="btn more_about">More...</button>
+				</div>
+			</div>
+
+			<div class="content reverse">
+				<div class="left">
+					<img class="img" src="{% static 'img/ArklisEditorGenerator.png' %}" alt="Arklis Editor Generator">
+				</div>
+
+				<div class="right">
+					<h3>Tree And Plants Generator</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam similique ab aliquam. Tempore, earum? Sapiente aperiam deleniti voluptates. Sed repellendus fuga quibusdam reiciendis perferendis dolor, incidunt accusamus ad error tenetur amet rerum impedit dolorem dicta ea porro, architecto iure.</p>
+
+					<button class="btn more_about">More...</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="about_main">
+		<h2 class="AboutUs_header">About Us</h2>
+
+		<p class="company_name">ARKLIS Group</p>
+		<p class="company_about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic dolor dignissimos eius repellat ea aliquid eos nesciunt est iure excepturi culpa, officia vel. Nulla ipsa, nobis perferendis aliquam? Vitae obcaecati, tenetur. Doloribus soluta excepturi iste eos maiores quia facere adipisci odio rerum est, ad id laudantium aliquid maxime blanditiis aperiam porro officia error vero quo. Quo modi quia doloremque labore saepe architecto dolorem reprehenderit, eligendi illo, reiciendis unde nesciunt quis.</p>
+	</div>
+
+	<div class="download_main" id="download_section">
+		<h2 class="download_header">Download</h2>
+
+		<p>Get Arklis Toolset and start creating</p>
+		<p class="version">Version: 1.0204.19</p>
+
+		<!-- <button type="submit" class="get_started download_section">Get Started</button> -->
+
+		<div class="card_container">
+			<div class="card">
+				<div class="title">
+					<h2>Arklis Terrain</h2>
+				</div>
+
+				<div class="option">
+					<ul>
+						<li>Terrain Modeling</li>
+						<li>Terrain Generator</li>
+						<li>Terrain Texturing</li>
+						<li>Python Scripting</li>
+					</ul>
+				</div>
+
+				{% if user.is_authenticated %}
+					<div class="more">
+						<a href="{% url 'arklisTerrain' %}" class="more_about">Learn more</a>
+					</div>
+				{% else %}
+					<div class="more">
+						<a href="{% url 'register' %}" class="more_about">Learn more</a>
+					</div>
+				{% endif %}
+			</div>
+
+			<div class="card">
+				<div class="title">
+					<h2>Arklis Nature</h2>
+				</div>
+
+				<div class="option">
+					<ul>
+						<li>Tree and Plants Modeling</li>
+						<li>Tree and Plants Generator</li>
+						<li>Tree and Plants Texturing</li>
+						<li>Python Scripting</li>
+					</ul>
+				</div>
+
+				{% if user.is_authenticated %}
+					<div class="more">
+						<a href="{% url 'arklisNature' %}" class="more_about">Learn more</a>
+					</div>
+				{% else %}
+					<div class="more">
+						<a href="{% url 'register' %}" class="more_about">Learn more</a>
+					</div>
+				{% endif %}
+			</div>
+
+			<div class="card">
+				<div class="title">
+					<h2>Arklis Exporter</h2>
+				</div>
+
+				<div class="option">
+					<ul>
+						<li>Export to UE4</li>
+						<li>Export to Unity</li>
+						<li>Export to CryEngine 5</li>
+						<li>Arklis SDK</li>
+					</ul>
+				</div>
+
+				{% if user.is_authenticated %}
+					<div class="more">
+						<a href="{% url 'arklisExporter' %}" class="more_about">Learn more</a>
+					</div>
+				{% else %}
+					<div class="more">
+						<a href="{% url 'register' %}" class="more_about">Learn more</a>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	<div class="company_main">
+		<h2 class="company_header">Our partners</h2>
+
+		<div id="owl-crl" class="owl-carousel owl-theme">
+			<div class="item">
+				<img src="{% static 'img/CDProjectRedLogo.png' %}" alt="CD Project Red">
+			</div>
+			<div class="item">
+				<img src="{% static 'img/BethesdaLogo.png' %}" alt="Bethesda">
+			</div>
+			<div class="item">
+				<img src="{% static 'img/BungieLogo.png' %}" alt="Bungie">
+			</div>
+			<div class="item">
+				<img src="{% static 'img/UbisoftLogo.png' %}" alt="Ubisoft">
+			</div>
+			<div class="item">
+				<img src="{% static 'img/ActivisionLogo.png' %}" alt="Activision">
+			</div>
+			<div class="item">
+				<img src="{% static 'img/2kGamesLogo.png' %}" alt="2K Games">
+			</div>
+			<div class="item">
+				<img src="{% static 'img/505GamesLogo.png' %}" alt="505 Games">
+			</div>
+			<div class="item">
+				<img src="{% static 'img/EALogo.png' %}" alt="EA" style="width: 80px; height: 70px; padding-left: 30px;">
+			</div>
+		</div>
+	</div>
+
+	<div class="support_main">
+		<h2 class="support_header">Support</h2>
+
+		<div class="support_container">
+			<div class="data contacts_info">
+				<h4>Our Contacts</h4>
+
+				<p>Address: Address Street, 21</p>
+				<p>Phone Number: +1 23-241233</p>
+				<p>Email: EmOne@gmail.com</p>
+			</div>
+
+			<div class="data contact_form">
+				<h4>Contact Us</h4>
+
+				<form action="" method="POST">
+					{% csrf_token %}
+
+					<div class="input_field">
+						<!-- <input type="text" id="name" required=""> -->
+						{{ form.fullName }}
+						<label>Full Name</label>
+					</div>
+
+					<div class="input_field">
+						<!-- <input type="email" id="email" required=""> -->
+						{{ form.email }}
+						<label>Email</label>
+					</div>
+
+					<div class="input_field">
+						<!-- <input type="text" id="subject" required=""> -->
+						{{ form.subject }}
+						<label>Subject</label>
+					</div>
+
+					<div class="input_field">
+						<!-- <textarea maxlength="100" id="description" required=""></textarea> -->
+						{{ form.description }}
+						<label>Description</label>
+					</div>
+
+					<div class="form_btn">
+						<input type="submit" name="" value="Send Message" class="contact_btn">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+
+{% include 'footer.html' %}
+
+{% endblock %}

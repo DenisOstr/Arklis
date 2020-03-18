@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'menu.html' %}
+
+<main>
+ 	<div class="register_container">
+	 	<h1 class="create_heading">
+	 		Update an account
+	 	</h1>
+		
+	 	{% if form.errors %}
+		 	<div class="container_errors">
+		 		{% for key, value in form.errors.items %}
+	 				{% for error in value %}
+		 				<p class="error">{{ error }}</p>
+		 			{% endfor %}
+				{% endfor %}
+		 	</div>
+		{% endif %}
+
+		<form action="" method="POST">
+			{% csrf_token %}
+
+			<div class="reg_inp">
+				<!-- <input type="text" required> -->
+				{{ form.firstName }}
+				<label>First Name<span class="req">*</span>:</label>
+			</div>
+
+			<div class="reg_inp">
+				<!-- <input type="text" required> -->
+				{{ form.lastName }}
+				<label>Last Name<span class="req">*</span>:</label>
+			</div>
+
+			<div class="reg_inp">
+				<!-- <input type="email" required> -->
+				{{ form.email }}
+				<label>E-mail Address<span class="req">*</span>:</label>
+			</div>
+
+			<div class="reg_btn">
+				<button type="submit">Update user information</button>
+			</div>
+		</form>
+
+		<span class="line"></span>
+
+		<div class="login_link">
+			<h4>Back to your profile</h4>
+			<a href="{% url 'profile' %}">Return to profile</a>
+		</div>
+	</div>
+</main>
+
+{% include 'footer.html' %}
+
+{% endblock %}

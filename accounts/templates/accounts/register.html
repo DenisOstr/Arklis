@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'menu.html' %}
+
+<main>
+ 	<div class="register_container">
+	 	<h1 class="create_heading">
+	 		Create an account
+	 	</h1>
+		
+	 	{% if form.errors %}
+		 	<div class="container_errors">
+		 		{% for key, value in form.errors.items %}
+	 				{% for error in value %}
+		 				<p class="error">{{ error }}</p>
+		 			{% endfor %}
+				{% endfor %}
+		 	</div>
+		{% endif %}
+
+		<form action="" method="POST">
+			{% csrf_token %}
+
+			<div class="reg_inp">
+				<!-- <input type="text" required> -->
+				{{ form.firstName }}
+				<label>First Name<span class="req">*</span>:</label>
+			</div>
+
+			<div class="reg_inp">
+				<!-- <input type="text" required> -->
+				{{ form.lastName }}
+				<label>Last Name<span class="req">*</span>:</label>
+			</div>
+
+			<div class="reg_inp">
+				<!-- <input type="text" required> -->
+				{{ form.username }}
+				<label>Username<span class="req">*</span>:</label>
+			</div>
+
+			<div class="reg_inp">
+				<!-- <input type="email" required> -->
+				{{ form.email }}
+				<label>E-mail Address<span class="req">*</span>:</label>
+			</div>
+
+			<div class="reg_inp">
+				<!-- <input type="email" required> -->
+				{{ form.emailConfirm }}
+				<label>Confirm E-mail Address<span class="req">*</span>:</label>
+			</div>
+
+			<div class="reg_inp">
+				<!-- <input type="password" required> -->
+				{{ form.password }}
+				<label>Password<span class="req">*</span>:</label>
+			</div>
+
+			<div class="reg_inp">
+				<!-- <input type="password" required> -->
+				{{ form.passwordConfirm }}
+				<label>Confirm Password<span class="req">*</span>:</label>
+			</div>
+
+			<label class="check">
+				<input type="checkbox">
+				<span class="checkmark"></span>
+				<p>I want to receive news about ARKLIS</p>
+			</label>
+
+			<label class="check">
+				<input type="checkbox" required>
+				<span class="checkmark"></span>
+				<p>I agree to the website Terms of Use and Privacy Policy<span class="req">*</span></p>
+			</label>
+
+			<div class="reg_btn">
+				<button type="submit">Create new account</button>
+			</div>
+		</form>
+
+		<span class="line"></span>
+
+		<div class="login_link">
+			<h4>I have an account</h4>
+			<a href="{% url 'login' %}">Login to your account</a>
+		</div>
+	</div>
+</main>
+
+{% include 'footer.html' %}
+
+{% endblock %}
